@@ -39,7 +39,7 @@ export default class Search extends Component {
 
 		//发送网络请求---使用fetch发送（优化）
 		try {
-			const response= await fetch(`/api1/search/users2?q=${keyWord}`)
+			const response= await fetch(`/api1/search/users?q=${keyWord}`)
 			const data = await response.json()
 			console.log(data);
 			PubSub.publish('atguigu',{isLoading:false,users:data.items})
