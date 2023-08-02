@@ -1,3 +1,9 @@
+# 代码备注：
+1. css样式信息在public中加载css以及index.html加载bootstrap
+2. 每个功能的demo代码在demo对应的文件夹中，完整的src重命名形式
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
