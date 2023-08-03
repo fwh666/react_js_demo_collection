@@ -1,9 +1,19 @@
 import React from 'react'
-import {NavLink,Routes,Route} from 'react-router-dom'
+import {NavLink,Routes,Route, Navigate, useRoutes} from 'react-router-dom'
 import About from './pages/About'
 import Home from './pages/Home'
+import routes from './routes'
+
+/**
+ * 
+ * @returns 
+ */
 
 export default function App() {
+    function computedClassName({isActive}){
+		return isActive ? 'list-group-item atguigu' : 'list-group-item'
+    }
+    const element = useRoutes(routes)
 	return (
 		<div>
 			<div className="row">
@@ -15,6 +25,10 @@ export default function App() {
 				<div className="col-xs-2 col-xs-offset-2">
 					<div className="list-group">
 						{/* 路由链接 */}
+                        {/* 高亮 */}
+                        <NavLink className={computedClassName} to={'/about'}>about-class</NavLink>
+                        <NavLink className={computedClassName} to={'/home'}>home-class</NavLink>
+
                         <NavLink className={"list-group-item"} to={'/about'}>about</NavLink>
                         <NavLink className={"list-group-item"} to={'/home'}>home</NavLink>
 
@@ -26,13 +40,11 @@ export default function App() {
 					<div className="panel">
 						<div className="panel-body">
 							{/* 注册路由 */}
-							<Routes>
-                                <Route path='/about' element={<About/>}></Route>
-                                <Route path='home' element={<Home/>}></Route>
-{/* 
-								<Route path="/about" element={<About/>}/>
-								<Route path="/home" element={<Home/>}/> */}
-							</Routes>
+							
+
+                            {/* 注册路由表 */}
+                            {element}
+                            
 						</div>
 					</div>
 				</div>
