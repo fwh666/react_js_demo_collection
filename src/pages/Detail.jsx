@@ -1,12 +1,19 @@
 import React from 'react'
-import {useParams,useMatch} from 'react-router-dom'
+import {useSearchParams,useLocation} from 'react-router-dom'
 
 export default function Detail() {
-	const {id,title,content} = useParams()
-	// const x = useMatch('/home/message/detail/:id/:title/:content')
-	// console.log(x)
+	// 用search获取对应字段的数据
+	const [search,setSearch] = useSearchParams()
+	const id = search.get('id')
+	const title = search.get('title')
+	const content = search.get('content')
+	const x = useLocation()
+	console.log('@',x)
 	return (
 		<ul>
+			<li>
+				<button onClick={()=>setSearch('id=008&title=哈哈&content=嘻嘻')}>点我更新一下收到的search参数</button>
+			</li>
 			<li>消息编号：{id}</li>
 			<li>消息标题：{title}</li>
 			<li>消息内容：{content}</li>

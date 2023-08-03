@@ -2,6 +2,7 @@ import React from 'react'
 import {useSearchParams,useLocation} from 'react-router-dom'
 
 export default function Detail() {
+	// 用search获取对应字段的数据
 	const [search,setSearch] = useSearchParams()
 	const id = search.get('id')
 	const title = search.get('title')

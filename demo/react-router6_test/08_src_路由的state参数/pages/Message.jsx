@@ -15,6 +15,7 @@ export default function Message() {
 					messages.map((m)=>{
 						return (
 							// 路由链接
+							// state 来得到所有的数据
 							<li key={m.id}>
 								<Link 
 									to="detail" 

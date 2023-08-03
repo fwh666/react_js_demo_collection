@@ -9,7 +9,7 @@ export default function Message() {
 		{id:'003',title:'消息3',content:'谁知盘中餐'},
 		{id:'004',title:'消息4',content:'粒粒皆辛苦'}
 	])
-	
+	// 编程式导航编码 可以通过函数传递参数 跳转到指定页面，把参数传递到指定页面
 	function showDetail(m){
 		navigate('detail',{
 			replace:false,
