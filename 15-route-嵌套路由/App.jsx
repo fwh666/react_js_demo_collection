@@ -4,7 +4,6 @@ import Home from './pages/Home' //Home是路由组件
 import About from './pages/About' //About是路由组件
 import Header from './components/Header' //Header是一般组件
 import MyNavLink from './components/MyNavLink'
-import Message from './pages/Home/Message'
 
 export default class App extends Component {
 	render() {
@@ -26,7 +25,6 @@ export default class App extends Component {
 							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
 							<MyNavLink to="/about">About</MyNavLink>
 							<MyNavLink to="/home">Home</MyNavLink>
-							{/* <MyNavLink to="/message">Message</MyNavLink> */}
 						</div>
 					</div>
 					<div className="col-xs-6">
@@ -34,12 +32,10 @@ export default class App extends Component {
 							<div className="panel-body">
 								{/* 注册路由 */}
 								<Routes>
-									<Route path='/about' Component={About}></Route>
-									<Route path='/home' Component={Home}></Route>
-									{/* <Route path='/message' Component={Message}></Route> */}
-									{/* <Route path="/about" component={About}/>
+									<Route path="/about" component={About}/>
 									<Route path="/home" component={Home}/>
-									<Route element={<Navigate to={"/about"}></Navigate>}></Route> */}
+									<Route element={<Navigate to={"/about"}></Navigate>}></Route>
+									{/* <Redirect to="/about"/> */}
 								</Routes>
 							</div>
 						</div>

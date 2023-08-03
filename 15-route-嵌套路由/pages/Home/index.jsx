@@ -20,14 +20,9 @@ export default class Home extends Component {
 						</ul>
 						{/* 注册路由 */}
 						<Routes>
-							{/* <Route path='/home/news' Component={News}></Route> */}
-							<Route path='news' element={<News/>}></Route>
-							
-							<Route path='/home/message' Component={Message}></Route>
-							{/* <Route path='/home/news' element={<Navigate to={News}></Navigate>}></Route> */}
-
-							{/* <Route path="/home/news" component={News}/>
-							<Route path="/home/message" component={Message}/> */}
+							<Route path="/home/news" component={News}/>
+							<Route path="/home/message" component={Message}/>
+							{/* <Redirect to="/home/news"/> */}
 						</Routes>
 					</div>
 				</div>

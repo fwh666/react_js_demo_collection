@@ -39,10 +39,10 @@ export default class App extends Component {
 									{/* 精确搜索条件 */}
 									<Route exact path='/home' Component={Home}></Route>
 									{/* 重定向-5版本移除了redirect采用Navigate */}
-									
+									{/* route5和6的区别：https://juejin.cn/post/7085266272476200967 */}
 									{/* <Navigate to="/about"/> */}
 									{/* 默认路径跳转到about */}
-									<Route path='*' element={<Navigate to="/about"></Navigate>}></Route>
+									{/* <Route path='*' element={<Navigate to="/about"></Navigate>}></Route> */}
 
 									{/* 旧版本写法 */}
 									 {/* <Route path="/about" component={About}/>
