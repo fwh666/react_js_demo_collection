@@ -1,29 +1,13 @@
-import React, { Component } from 'react'
-import { Button,DatePicker } from 'antd';
-import {WechatOutlined,WeiboOutlined,SearchOutlined,AppleOutlined} from '@ant-design/icons'
-const { RangePicker } = DatePicker;
+import React, { Component,Fragment } from 'react'
+// import Demo from './components/03_hooks'
+import Demo from './components/04_fragment'
 
 export default class App extends Component {
 	render() {
 		return (
-			<div>
-				App....
-				<button>点我</button>
-				<Button type="primary">按钮1</Button>
-				<Button >按钮2</Button>
-				<Button type="link">按钮3</Button>
-				<Button type="primary" icon={<SearchOutlined />}>
-					Search
-				</Button>
-				<br></br>
-				<WechatOutlined />
-				<WeiboOutlined />
-				<AppleOutlined />
-				<br></br>
-				<DatePicker/>
-				<RangePicker/>
-
-			</div>
+			<Fragment>
+				<Demo/>
+			</Fragment>
 		)
 	}
 }
