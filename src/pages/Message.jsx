@@ -1,13 +1,25 @@
 import React,{useState} from 'react'
-import {Link,Outlet} from 'react-router-dom'
+import {Link,Outlet,useNavigate} from 'react-router-dom'
 
 export default function Message() {
+	const navigate = useNavigate()
 	const [messages] = useState([
 		{id:'001',title:'消息1',content:'锄禾日当午'},
 		{id:'002',title:'消息2',content:'汗滴禾下土'},
 		{id:'003',title:'消息3',content:'谁知盘中餐'},
 		{id:'004',title:'消息4',content:'粒粒皆辛苦'}
 	])
+	// 编程式导航编码 可以通过函数传递参数 跳转到指定页面，把参数传递到指定页面
+	function showDetail(m){
+		navigate('detail',{
+			replace:false,
+			state:{
+				id:m.id,
+				title:m.title,
+				content:m.content
+			}
+		})
+	}
 	return (
 		<div>
 			<ul>
@@ -16,7 +28,15 @@ export default function Message() {
 						return (
 							// 路由链接
 							<li key={m.id}>
-								<Link to={`detail?id=${m.id}&title=${m.title}&content=${m.content}`}>{m.title}</Link>
+								<Link 
+									to="detail" 
+									state={{
+										id:m.id,
+										title:m.title,
+										content:m.content,
+									}}
+								>{m.title}</Link>
+								<button onClick={()=>showDetail(m)}>查看详情</button>
 							</li>
 						)
 					})
